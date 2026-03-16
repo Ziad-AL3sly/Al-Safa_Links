@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>روابط | شركة الصفا</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="apple-touch-icon" href="images/alsaf.jpg" />
+    <link rel="icon" href="images/alsaf.jpg" />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Cairo', 'Segoe UI', sans-serif;
+        }
+
+        @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap');
+
+        body {
+            background: linear-gradient(145deg, #f8f9fc, #eef2f6);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .card {
+            max-width: 500px;
+            width: 100%;
+            background: #ffffff;
+            border-radius: 60px 60px 40px 40px;
+            box-shadow:
+                0 30px 60px rgba(0, 0, 0, 0.1),
+                0 0 0 1px rgba(255, 77, 109, 0.1) inset;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .top-decoration {
+            height: 12px;
+            background: linear-gradient(90deg, #000000, #000000, #000000);
+            width: 100%;
+        }
+
+        .content {
+            padding: 40px 30px;
+            position: relative;
+        }
+
+
+        .logo-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .logo-wrapper {
+            width: 150px;
+            height: 150px;
+            margin: 0 auto 20px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow:
+                0 15px 35px rgba(255, 77, 109, 0.3),
+                0 0 0 5px #ffffff,
+                0 0 0 7px #ffd9e0;
+            transition: 0.3s;
+        }
+
+        .logo-wrapper:hover {
+            transform: scale(1.03);
+            box-shadow:
+                0 20px 40px rgba(255, 77, 109, 0.4),
+                0 0 0 5px #ffffff,
+                0 0 0 9px #ffc9d2;
+        }
+
+        .logo-wrapper img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid white;
+        }
+
+        .logo-section h1 {
+            font-size: 42px;
+            font-weight: 900;
+            color: #1a1a2c;
+            margin-bottom: 5px;
+            letter-spacing: -0.5px;
+            text-shadow: 2px 2px 0 rgba(255, 77, 109, 0.1);
+        }
+
+        .logo-section .subtitle {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 15px;
+            background: #f2f5fa;
+            display: inline-block;
+            padding: 8px 28px;
+            border-radius: 100px;
+            border: 1px solid #ffd9e0;
+            font-weight: 500;
+        }
+
+        .official-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: white;
+            color: #ff4d6d;
+            padding: 8px 28px;
+            border-radius: 100px;
+            font-size: 14px;
+            font-weight: 700;
+            border: 1px solid #ffb8c5;
+            box-shadow: 0 5px 15px rgba(255, 77, 109, 0.15);
+        }
+
+        .official-badge i {
+            font-size: 16px;
+            color: #ff4d6d;
+        }
+
+
+        .stats-row {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+            padding: 20px 0;
+            border-top: 2px dashed #eee;
+            border-bottom: 2px dashed #eee;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 24px;
+            font-weight: 900;
+            color: #ff4d6d;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 13px;
+            color: #888;
+            font-weight: 500;
+        }
+
+        .section-title {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin: 30px 0 20px;
+        }
+
+        .title-line {
+            width: 5px;
+            height: 30px;
+            background: linear-gradient(135deg, #ff4d6d, #ff8a5c);
+            border-radius: 10px;
+        }
+
+        .section-title h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #1a1a2c;
+        }
+
+        .section-title span {
+            color: #ff4d6d;
+            font-size: 14px;
+            margin-right: auto;
+            opacity: 0.8;
+        }
+
+        .links-container {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .link-item {
+            display: flex;
+            align-items: center;
+            padding: 16px 25px;
+            background: #f8f9fc;
+            border: 1px solid #edf2f7;
+            border-radius: 100px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .link-item::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 77, 109, 0.1), transparent);
+            transform: translateX(-100%);
+            transition: transform 0.6s;
+        }
+
+        .link-item:hover {
+            border-color: #ff4d6d;
+            background: white;
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(255, 77, 109, 0.15);
+        }
+
+        .link-item:hover::before {
+            transform: translateX(100%);
+        }
+
+        .link-icon {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            margin-left: 15px;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        .fb-icon {
+            background: #1877f2;
+        }
+
+        .ig-icon {
+            background: linear-gradient(45deg, #f09433, #d62976, #962fbf);
+        }
+
+        .tt-icon {
+            background: #010101;
+        }
+
+        .x-icon {
+            background: #000000;
+        }
+
+        .linkedin-icon {
+            background: #0077b5;
+        }
+
+        .yt-icon {
+            background: #ff0000;
+        }
+
+        .wa-icon {
+            background: #25D366;
+        }
+
+        .tg-icon {
+            background: #0088cc;
+        }
+
+        .snap-icon {
+            background: #fffc00;
+            color: #000;
+        }
+
+        .web-icon {
+            background: #ff4d6d;
+        }
+
+        .link-content {
+            flex: 1;
+        }
+
+        .link-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1a1a2c;
+            margin-bottom: 4px;
+        }
+
+        .link-handle {
+            font-size: 13px;
+            color: #666;
+        }
+
+        .link-arrow {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ff4d6d;
+            font-size: 14px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s;
+        }
+
+        .link-item:hover .link-arrow {
+            background: #ff4d6d;
+            color: white;
+            transform: rotate(-45deg);
+        }
+
+        .contact-card {
+            background: linear-gradient(135deg, #ff4d6d, #ff8a5c);
+            border-radius: 40px;
+            padding: 30px 25px;
+            margin: 30px 0 20px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-card::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .contact-row {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-row:last-child {
+            border-bottom: none;
+        }
+
+        .contact-row i {
+            width: 30px;
+            font-size: 20px;
+        }
+
+        .contact-row span {
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .hours-box {
+            background: #f8f9fc;
+            border: 1px solid #edf2f7;
+            border-radius: 30px;
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .hours-box i {
+            color: #ff4d6d;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .hours-box .days {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1a1a2c;
+            margin-bottom: 5px;
+        }
+
+        .hours-box .time {
+            font-size: 20px;
+            font-weight: 900;
+            color: #ff4d6d;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #aaa;
+            font-size: 13px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .footer i {
+            color: #ff4d6d;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="card">
+        <div class="top-decoration"></div>
+        <div class="content">
+
+
+            <div class="logo-section">
+                <div class="logo-wrapper">
+                    <img src="images/alsaf.jpg" alt="الصفا">
+                </div>
+                <h1>شركة الصفا</h1>
+                <div class="subtitle">للتسويق العقاري والتشطيبات</div>
+                <div class="official-badge">
+                    <i class="fas fa-check-circle"></i>
+                    <span>نحقق احلامك العقارية</span>
+                </div>
+            </div>
+
+            <!-- ===== أرقام سريعة (موجودة كما هي - غير محذوفة) ===== -->
+            <!-- <div class="stats-row">
+                <div class="stat">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">عام</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">100+</div>
+                    <div class="stat-label">عقار</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">رضا</div>
+                </div>
+            </div> -->
+
+            <!-- قسم السوشيال ميديا -->
+            <div class="section-title">
+                <div class="title-line"></div>
+                <h3>تابعونا على</h3>
+                <span>FOLLOW</span>
+            </div>
+
+            <div class="links-container">
+                <!-- فيسبوك -->
+                <a href="https://www.facebook.com/alsafa.egy" class="link-item" target="_blank">
+                    <div class="link-icon fb-icon"><i class="fab fa-facebook-f"></i></div>
+                    <div class="link-content">
+                        <div class="link-title">فيسبوك</div>
+                        <!-- <div class="link-handle">@alsafa.realestate</div> -->
+                    </div>
+                    <div class="link-arrow"><i class="fas fa-arrow-left"></i></div>
+                </a>
+
+                <!-- تيك توك -->
+                <a href="https://www.tiktok.com/@alsafacompany2" class="link-item" target="_blank">
+                    <div class="link-icon tt-icon"><i class="fab fa-tiktok"></i></div>
+                    <div class="link-content">
+                        <div class="link-title">تيك توك</div>
+                        <!-- <div class="link-handle">@alsafa.property</div> -->
+                    </div>
+                    <div class="link-arrow"><i class="fas fa-arrow-left"></i></div>
+                </a>
+
+                <!-- انستجرام -->
+                <a href="https://www.instagram.com/alsafa1.company?utm_source=qr" class="link-item" target="_blank">
+                    <div class="link-icon ig-icon"><i class="fab fa-instagram"></i></div>
+                    <div class="link-content">
+                        <div class="link-title">انستجرام</div>
+                        <!-- <div class="link-handle">@alsafa.eg</div> -->
+                    </div>
+                    <div class="link-arrow"><i class="fas fa-arrow-left"></i></div>
+                </a>
+
+                <div class="section-title">
+                    <div class="title-line"></div>
+                    <h3>روابط اخري</h3>
+                    <span>للتواصل</span>
+                </div>
+
+
+                <!-- <a href="#" class="link-item">
+                    <div class="link-icon x-icon"><i class="fab fa-x-twitter"></i></div>
+                    <div class="link-content">
+                        <div class="link-title">X (تويتر)</div>
+                        <div class="link-handle">@alsafa_eg</div>
+                    </div>
+                    <div class="link-arrow"><i class="fas fa-arrow-left"></i></div>
+                </a> -->
+
+                <!-- لينكد إن -->
+                <!-- <a href="#" class="link-item">
+                    <div class="link-icon linkedin-icon"><i class="fab fa-linkedin-in"></i></div>
+                    <div class="link-content">
+                        <div class="link-title">لينكد إن</div>
+                        <div class="link-handle">/company/alsafa</div>
+                    </div>
+                    <div class="link-arrow"><i class="fas fa-arrow-left"></i></div>
+                </a> -->
+
+                <!-- يوتيوب -->
+                <!-- <a href="#" class="link-item">
+                    <div class="link-icon yt-icon"><i class="fab fa-youtube"></i></div>
+                    <div class="link-content">
+                        <div class="link-title">يوتيوب</div>
+                        <div class="link-handle">/AlsafaChannel</div>
+                    </div>
+                    <div class="link-arrow"><i class="fas fa-arrow-left"></i></div>
+                </a> -->
+
+                <!-- واتساب -->
+                <a href="https://wa.me/201090516145" class="link-item" target="_blank">
+                    <div class="link-icon wa-icon"><i class="fab fa-whatsapp"></i></div>
+                    <div class="link-content">
+                        <div class="link-title">واتساب</div>
+                        <!-- <div class="link-handle">+20 01090516145</div> -->
+                    </div>
+                    <div class="link-arrow"><i class="fas fa-arrow-left"></i></div>
+                </a>
+
+                <!-- تليجرام -->
+                <a href="https://t.me/Al_safaCompany" class="link-item" target="_blank">
+                    <div class="link-icon tg-icon"><i class="fab fa-telegram"></i></div>
+                    <div class="link-content">
+                        <div class="link-title">تليجرام</div>
+                        <!-- <div class="link-handle">@alsafa_group</div> -->
+                    </div>
+                    <div class="link-arrow"><i class="fas fa-arrow-left"></i></div>
+                </a>
+
+                <!-- سناب شات -->
+                <!-- <a href="#" class="link-item">
+                    <div class="link-icon snap-icon"><i class="fab fa-snapchat"></i></div>
+                    <div class="link-content">
+                        <div class="link-title">سناب شات</div>
+                        <div class="link-handle">@alsafa.eg</div>
+                    </div>
+                    <div class="link-arrow"><i class="fas fa-arrow-left"></i></div>
+                </a> -->
+
+                <!-- الموقع الرسمي -->
+                <a href="https://ziad-al3sly.github.io/Al-Safa-Company" class="link-item" target="_blank">
+                    <div class="link-icon web-icon"><i class="fas fa-globe"></i></div>
+                    <div class="link-content">
+                        <div class="link-title"> الموقع الرسمي للشركة</div>
+                        <!-- <div class="link-handle">www.alsafa-eg.com</div> -->
+                    </div>
+                    <div class="link-arrow"><i class="fas fa-arrow-left"></i></div>
+                </a>
+            </div>
+
+            <!-- بطاقة التواصل السريع - موجودة كما هي -->
+            <!-- <div class="contact-card">
+                <div class="contact-row">
+                    <i class="fas fa-phone-alt"></i>
+                    <span>+20 123 456 7890</span>
+                </div>
+                <div class="contact-row">
+                    <i class="fas fa-mobile-alt"></i>
+                    <span>+20 123 456 7890</span>
+                </div>
+                <div class="contact-row">
+                    <i class="fas fa-envelope"></i>
+                    <span>info@alsafa-eg.com</span>
+                </div>
+                <div class="contact-row">
+                    <i class="fas fa-map-marker-alt"></i>
+                    <span>حدائق الأهرام، الجيزة</span>
+                </div>
+            </div> -->
+
+            <!-- ساعات العمل -->
+            <!-- <div class="hours-box">
+                <i class="fas fa-clock"></i>
+                <div class="days">السبت - الخميس</div>
+                <div class="time">٩:٠٠ ص - ٥:٠٠ م</div>
+                <div style="color: #888; font-size: 13px; margin-top: 5px;">الجمعة: ٢:٠٠ م - ٥:٠٠ م</div>
+            </div> -->
+
+            <!-- الفوتر -->
+            <div class="footer">
+                <i class="fas fa-copyright"></i> 2026 شركة الصفا للتسويق العقاري والتشطيبات
+                <div style="margin-top: 8px; opacity: 0.5;">Designed by Ziad Al-3sali</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

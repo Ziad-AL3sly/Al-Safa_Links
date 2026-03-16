@@ -7,7 +7,7 @@
     <title>روابط | شركة الصفا</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="apple-touch-icon" href="images/alsaf.jpg" />
-    <link rel="icon" href="images/alsaf.jpg"/>
+    <link rel="icon" href="images/alsaf.jpg" />
     <style>
         * {
             margin: 0;
@@ -392,6 +392,7 @@
             margin-bottom: 5px;
         }
 
+
         .hours-box .time {
             font-size: 20px;
             font-weight: 900;
@@ -401,7 +402,7 @@
         .footer {
             text-align: center;
             margin-top: 30px;
-            color: #aaa;
+            color: #000000;
             font-size: 13px;
             padding-top: 20px;
             border-top: 1px solid #eee;
@@ -410,6 +411,59 @@
         .footer i {
             color: #ff4d6d;
         }
+
+        /* ===== تنسيقات جديدة ومحسنة لقسم المصمم ===== */
+        .designer-credit {
+            margin-top: 12px;
+            /* زيادة المسافة */
+            opacity: 1;
+            font-weight: 600;
+            /* خط أكثر وضوحاً */
+            transition: all 0.3s ease;
+            background: #f0f2f5;
+            /* خلفية خفيفة */
+            padding: 8px 15px;
+            border-radius: 100px;
+            /* شكل دائري */
+            display: inline-block;
+            /* لكي لا يأخذ العرض الكامل */
+            border: 1px solid transparent;
+            /* border شفاف في الوضع العادي */
+        }
+
+        .designer-credit a {
+            text-decoration: none;
+            color: #ff4d6d;
+            /* اللون الأساسي للشركة */
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .designer-credit a i {
+            font-size: 16px;
+            color: #000000;
+            /* لون أسود للنجمة */
+            transition: all 0.3s ease;
+        }
+
+        /* تأثير التحويم (Hover) على رابط المصمم */
+        .designer-credit:hover {
+            border-color: #ff4d6d;
+            background: #ffffff;
+            box-shadow: 0 8px 15px rgba(255, 77, 109, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .designer-credit:hover a i {
+            color: #ff4d6d;
+            /* تغيير لون النجمة للأحمر */
+            transform: scale(1.2) rotate(5deg);
+            /* تكبير وتدوير خفيف */
+        }
+
+        /* ===== نهاية تنسيقات المصمم ===== */
     </style>
 </head>
 
@@ -590,12 +644,15 @@
                 <div style="color: #888; font-size: 13px; margin-top: 5px;">الجمعة: ٢:٠٠ م - ٥:٠٠ م</div>
             </div> -->
 
-            <!-- الفوتر -->
+
             <div class="footer">
                 <i class="fas fa-copyright"></i> 2026 شركة الصفا للتسويق العقاري والتشطيبات
-                <a href="https://wa.me/201092504745?text=السلام عليكم عايز اعمل صفحه روابط" target="_blank">
-                    <div style="margin-top: 8px; opacity: 0.5;">Designed by Ziad Al-3sali</div>
-                </a>
+                <div class="designer-credit">
+                    <a href="https://wa.me/201092504745?text=السلام عليكم عايز اعمل صفحه روابط" target="_blank">
+                        <i class="fas fa-paint-brush"></i> Designed by Ziad Al-3sali
+                        <i class="fas fa-star" style="font-size: 12px;"></i>
+                    </a>
+                </div>
             </div>
         </div>
     </div>
